@@ -29,7 +29,7 @@ https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/merged_proxies.
 ```
 ### shadowrocket订阅链接
 ```
-https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/shadowrocket.txt
+https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/shadowrocket_base64.txt
 ```
 
 ## 加速的订阅链接
@@ -39,7 +39,7 @@ https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/merged_proxies.yam
 ```
 ### shadowrocket
 ```
-https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/shadowrocket.txt
+https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/shadowrocket_base64.txt
 ```
 
 ## Chromego聚合说明
