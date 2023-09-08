@@ -52,10 +52,10 @@ for index, url in enumerate(urls):
         "cipher": method,
         "password": password,
         "plugin": "shadow-tls",
-        #"client-fingerprint": "chrome",
+        "client-fingerprint": "chrome",
         "plugin-opts": {
             "host": server_name,
-            #"password": "",
+            "password": "",
             "version": 1
 
         }
