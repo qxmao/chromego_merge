@@ -25,7 +25,8 @@ jobs:
 
       - name: Run merge script
         run: python meta_merge.py  # 替换为你的 merge.py 脚本名称
-
+      - name: Run shadowrocket merge script
+        run: python shadowrocket_merge.py  # 替换为你的 merge.py 脚本名称
       - name: Commit Changes
         run: |
           git config core.ignorecase false
