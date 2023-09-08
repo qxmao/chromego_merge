@@ -105,8 +105,10 @@ proxies:
   cipher: 2022-blake3-aes-128-gcm
   password: 9JCsP55fgSstiRwiMlhbRg==
   plugin: shadow-tls
+  client-fingerprint: chrome
   plugin-opts:
     host: www.microsoft.com
+    password: ''
     version: 1
 - name: shadowtls1
   type: ss
@@ -115,8 +117,10 @@ proxies:
   cipher: 2022-blake3-aes-128-gcm
   password: 8JCsPssfgS8tiRwiMlhARg==
   plugin: shadow-tls
+  client-fingerprint: chrome
   plugin-opts:
     host: www.microsoft.com
+    password: ''
     version: 1
 - name: hysteria0
   type: hysteria
