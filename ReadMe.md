@@ -18,7 +18,7 @@ chromego如果更新我会及时修改代码保证代码可用，如果更新不
 可以用warp+机器人和提取wg节点替换掉配置文件中的wg信息
 [warp提取wireguard网站](https://replit.com/@misaka-blog/wgcf-profile-generator)
 [warp+机器人](https://t.me/generatewarpplusbot)
-## clash-meta订阅链接(小火箭兼容，注意shadowtls可能无法使用需要手动添加host）
+## clash-meta订阅链接(小火箭无法使用warp链，注意shadowtls可能无法使用需要手动添加host）
 ### 原始版本
 ```
 https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/merged_warp_proxies.yaml
@@ -27,30 +27,30 @@ https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/merged_warp_pro
 ```
 https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/merged_proxies.yaml
 ```
+### shadowrocket订阅链接
+https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/shadowrocket.txt
+
 ## 加速的订阅链接
 ### 原始版本
 ```
 https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/merged_proxies.yaml
 ```
-### 套上warp版本
+### shadowrocket
 ```
-https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/merged_warp_proxies.yaml
+https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/shadowrocket.txt
 ```
 
 ## Chromego聚合说明
 | ChromeGo文件夹 | 协议 | 结果 | 备注 |
 |--------|--------|--------|--------|
-| clash.meta   | reality vision  | 已聚合   |     | 
-| hysteria   | hysteria1   | 已聚合   |     | 
-| xray   | reality grpc tcp   | 已聚合   |     | 
-| sing-box   | shadowtls  v1  | 已聚合   | clash-meta对v1的支持有问题导致并无法在clashmeta中使用，可以手动拿出节点放入小火箭使用，并且我不知道chromego为什么搞个v1版本，明明v2 v3早就出了    | 
-| clashB v2go v2rayB   | 各种ss vmess   | 未聚合   |  又臭又长很多节点都已经失效   | 
-| naiveproxy   | naiveproxy   | 已聚合   |  需要用shadowrocket   | 
+| clash.meta   | reality vision  | 已聚合（meta和小火箭）   |     | 
+| hysteria   | hysteria1   | 已聚合（meta和小火箭）   |     | 
+| xray   | reality grpc vision   | 已聚合（meta和小火箭）   |     | 
+| sing-box   | shadowtls  v1  | 已聚合(小火箭链接)   | clash-meta对v1的支持有问题导致并无法在clashmeta中使用，可以手动拿出节点放入小火箭使用，并且我不知道chromego为什么搞个v1版本，明明v2 v3早就出了.    | 
+| naiveproxy   | naiveproxy   | 已聚合（小火箭）   |  需要用shadowrocket   | 
 | psiphon   | 未知   | 未聚合   |  不知道是什么东西   | 
+| clashB v2go v2rayB   | 各种ss vmess   | 未聚合   |  又臭又长很多节点都已经失效   | 
 ## 致谢
 [chromego](https://github.com/bannedbook/fanqiang/tree/master/ChromeGo)
 ## shadowrocket支持
-不想写了，写了一半，有点累
-TODO：
-- clashyaml文件转shadowrocket
-- xray reality转shadowrocket
+

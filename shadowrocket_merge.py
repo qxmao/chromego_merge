@@ -1,6 +1,8 @@
 import base64
 import json
 import urllib.request
+import yaml
+import codecs
 
 merged_proxies = []
 
@@ -91,7 +93,93 @@ try:
 except Exception as e:
     print(f"Error reading file: {e}")
 
+# xray json reality节点处理
+try:
+    with open("./urls/reality_urls.txt", "r") as file:
+        urls = file.read().splitlines()
 
+    # 遍历每个网址
+    for index, url in enumerate(urls):
+        try:
+            # 使用适当的方法从网址中获取内容，这里使用urllib库示例
+            response = urllib.request.urlopen(url)
+            data = response.read().decode("utf-8")
+            json_data = json.loads(data)
+
+            # 提取所需字段
+            protocol = json_data["outbounds"][0]["protocol"]
+            server = json_data["outbounds"][0]["settings"]["vnext"][0]["address"]
+            port = json_data["outbounds"][0]["settings"]["vnext"][0]["port"]
+            uuid = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["id"]
+            istls = True
+            flow = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["flow"]
+            # 传输方式
+            network = json_data["outbounds"][0]["streamSettings"]["network"]
+            publicKey = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["publicKey"]
+            shortId = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["shortId"]
+            serverName = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["serverName"]
+            fingerprint = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["fingerprint"]
+            spx = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["spiderX"]
+            # udp转发
+            isudp = True
+            name = f"reality{index}"
+            
+            # 根据network判断tcp
+            if network == "tcp":
+                reality = f"vless://{uuid}@{server}:{port}?security=reality&flow={flow}&type={network}&fp={fingerprint}&pbk={publicKey}&sni={serverName}&spx={spx}&sid={shortId}#REALITY{index}"
+
+            # 根据network判断grpc
+            elif network == "grpc":
+                serviceName = json_data["outbounds"][0]["streamSettings"]["grpcSettings"]["serviceName"]
+                reality = f"vless://{uuid}@{server}:{port}?security=reality&flow={flow}&&type={network}&fp={fingerprint}&pbk={publicKey}&sni={serverName}&spx={spx}&sid={shortId}&serviceName={serviceName}#REALITY{index}"
+            else:
+                print(f"其他协议还未支持 URL {url}")
+                reality = ""
+                continue
+            
+            # 将当前proxy字典添加到所有proxies列表中
+            merged_proxies.append(reality)
+        except Exception as e:
+            print(f"Error processing URL {url}: {e}")
+except Exception as e:
+    print(f"Error reading file: {e}")
+
+
+# 获取clash文本中的内容
+try:
+    with open('./urls/clash_urls.txt', 'r') as file:
+        urls = file.read().splitlines()
+
+    # 遍历每个网址
+    for url in urls:
+        try:
+            # 使用适当的方法从网址中获取内容，这里使用urllib库示例
+            response = urllib.request.urlopen(url)
+            data = response.read().decode('utf-8')
+
+            # 解析YAML格式的内容
+            content = yaml.safe_load(data)
+
+            # 提取proxies部分并合并到merged_proxies中
+            proxies = content.get('proxies', [])
+
+            for proxy in proxies:
+                server = proxy['server']
+                port  = proxy['port']
+                udp = proxy['udp']
+                uuid = proxy['uuid']
+                tls = proxy['tls']
+                serverName = proxy['servername']
+                flow = proxy['flow']
+                network = proxy['network']
+                publicKey = proxy['reality-opts']['public-key']
+                fp = proxy['client-fingerprint']
+                reality_meta =  f"vless://{uuid}@{server}:{port}?security=reality&flow={flow}&type={network}&fp={fingerprint}&pbk={publicKey}&sni={serverName}#reality_meta{index}"
+                merged_proxies.append(reality_meta)
+        except Exception as e:
+            print(f"Error processing URL {url}: {e}")
+except Exception as e:
+    print(f"Error reading file: {e}")
 
 # 将结果写入文件
 try:

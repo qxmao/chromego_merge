@@ -29,48 +29,48 @@ except Exception as e:
 
 
 # shadowtls singbox节点处理
-try:
-    with open("./urls/shadowtls_urls.txt", "r") as file:
-        urls = file.read().splitlines()
+# try:
+#     with open("./urls/shadowtls_urls.txt", "r") as file:
+#         urls = file.read().splitlines()
 
-    # 遍历每个网址
-    for index, url in enumerate(urls):
-        try:
-            # 使用适当的方法从网址中获取内容，这里使用urllib库示例
-            response = urllib.request.urlopen(url)
-            data = response.read().decode("utf-8")
-            json_data = json.loads(data)
+#     # 遍历每个网址
+#     for index, url in enumerate(urls):
+#         try:
+#             # 使用适当的方法从网址中获取内容，这里使用urllib库示例
+#             response = urllib.request.urlopen(url)
+#             data = response.read().decode("utf-8")
+#             json_data = json.loads(data)
 
-            # 提取所需字段
-            method = json_data["outbounds"][0]["method"]
-            password = json_data["outbounds"][0]["password"]
-            server = json_data["outbounds"][1]["server"]
-            server_port = json_data["outbounds"][1]["server_port"]
-            server_name = json_data["outbounds"][1]["tls"]["server_name"]
-            name = f"shadowtls{index}"
-            # 创建当前网址的proxy字典
-            proxy = {
-                "name": name,
-                "type": "ss",
-                "server": server,
-                "port": server_port,
-                "cipher": method,
-                "password": password,
-                "plugin": "shadow-tls",
-                "client-fingerprint": "chrome",
-                "plugin-opts": {
-                    "host": server_name,
-                    "password": "",
-                    "version": 1
-                }
-            }
+#             # 提取所需字段
+#             method = json_data["outbounds"][0]["method"]
+#             password = json_data["outbounds"][0]["password"]
+#             server = json_data["outbounds"][1]["server"]
+#             server_port = json_data["outbounds"][1]["server_port"]
+#             server_name = json_data["outbounds"][1]["tls"]["server_name"]
+#             name = f"shadowtls{index}"
+#             # 创建当前网址的proxy字典
+#             proxy = {
+#                 "name": name,
+#                 "type": "ss",
+#                 "server": server,
+#                 "port": server_port,
+#                 "cipher": method,
+#                 "password": password,
+#                 "plugin": "shadow-tls",
+#                 "client-fingerprint": "chrome",
+#                 "plugin-opts": {
+#                     "host": server_name,
+#                     "password": "",
+#                     "version": 1
+#                 }
+#             }
 
-            # 将当前proxy字典添加到所有proxies列表中
-            merged_proxies.append(proxy)
-        except Exception as e:
-            print(f"Error processing URL {url}: {e}")
-except Exception as e:
-    print(f"Error reading file: {e}")
+#             # 将当前proxy字典添加到所有proxies列表中
+#             merged_proxies.append(proxy)
+#         except Exception as e:
+#             print(f"Error processing URL {url}: {e}")
+# except Exception as e:
+#     print(f"Error reading file: {e}")
 #歇斯底里节点 json处理
 try:
     with open("./urls/hysteria_urls.txt", "r") as file:
