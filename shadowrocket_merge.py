@@ -151,7 +151,7 @@ try:
         urls = file.read().splitlines()
 
     # 遍历每个网址
-    for url in urls:
+    for index, url in enumerate(urls):
         try:
             # 使用适当的方法从网址中获取内容，这里使用urllib库示例
             response = urllib.request.urlopen(url)
