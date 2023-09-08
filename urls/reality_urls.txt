@@ -1,0 +1,4 @@
+https://gitlab.com/free9999/ipupdate/-/raw/master/xray/config.json
+https://fastly.jsdelivr.net/gh/Alvin9999/pac2@latest/xray/config.json
+https://gitlab.com/free9999/ipupdate/-/raw/master/xray/2/config.json
+https://www.githubip.xyz/Alvin9999/pac2/master/xray/2/config.json

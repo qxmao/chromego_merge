@@ -1,0 +1,3 @@
+https://gitlab.com/free9999/ipupdate/-/raw/master/hysteria/config.json
+https://fastly.jsdelivr.net/gh/Alvin9999/pac2@latest/hysteria/config.json
+https://gitlab.com/free9999/ipupdate/-/raw/master/hysteria/2/config.json
