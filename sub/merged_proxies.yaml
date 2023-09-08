@@ -98,30 +98,6 @@ proxies:
   reality-opts:
     public-key: jLzBerhjXZGmQRCEWFFuc8CCo6c4Zv03iWc0OxWMl0M
   client-fingerprint: chrome
-- name: shadowtls0
-  type: ss
-  server: 45.136.245.249
-  port: 443
-  cipher: 2022-blake3-aes-128-gcm
-  password: 9JCsP55fgSstiRwiMlhbRg==
-  plugin: shadow-tls
-  client-fingerprint: chrome
-  plugin-opts:
-    host: www.microsoft.com
-    password: ''
-    version: 1
-- name: shadowtls1
-  type: ss
-  server: 108.181.22.213
-  port: 443
-  cipher: 2022-blake3-aes-128-gcm
-  password: 8JCsPssfgS8tiRwiMlhARg==
-  plugin: shadow-tls
-  client-fingerprint: chrome
-  plugin-opts:
-    host: www.microsoft.com
-    password: ''
-    version: 1
 - name: hysteria0
   type: hysteria
   server: 167.160.91.115
@@ -232,8 +208,6 @@ proxy-groups:
   - 洛杉矶4
   - 洛杉矶5
   - 洛杉矶6
-  - shadowtls0
-  - shadowtls1
   - hysteria0
   - hysteria1
   - hysteria2
@@ -254,8 +228,6 @@ proxy-groups:
   - 洛杉矶4
   - 洛杉矶5
   - 洛杉矶6
-  - shadowtls0
-  - shadowtls1
   - hysteria0
   - hysteria1
   - hysteria2
