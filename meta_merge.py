@@ -5,7 +5,7 @@ import json
 merged_proxies = []
 
 # 从reality文本文件中读取网址
-with open('/urls/clash_urls.txt', 'r') as file:
+with open('./urls/clash_urls.txt', 'r') as file:
     urls = file.read().splitlines()
 
 # 遍历每个网址
@@ -25,7 +25,7 @@ for url in urls:
 
 # shadowtls节点处理
 # 从文件中读取shadowtls_urls.txt中的网址列表
-with open("/urls/shadowtls_urls.txt", "r") as file:
+with open("./urls/shadowtls_urls.txt", "r") as file:
     urls = file.read().splitlines()
 
 # 遍历每个网址
@@ -65,7 +65,7 @@ for index, url in enumerate(urls):
     merged_proxies.append(proxy)
 
 # 歇斯底里节点处理
-with open("/urls/hysteria_urls.txt", "r") as file:
+with open("./urls/hysteria_urls.txt", "r") as file:
     urls = file.read().splitlines()
 
 # 遍历每个网址
@@ -107,7 +107,7 @@ for index, url in enumerate(urls):
     merged_proxies.append(proxy)
 
 # reality节点处理
-with open("/urls/reality_urls.txt", "r") as file:
+with open("./urls/reality_urls.txt", "r") as file:
     urls = file.read().splitlines()
 
 # 遍历每个网址
@@ -184,11 +184,11 @@ for index, url in enumerate(urls):
 
 
 # 读取普通的配置文件内容
-with codecs.open('/templates/clash_template.yaml', 'r', encoding='utf-8') as file:
+with codecs.open('./templates/clash_template.yaml', 'r', encoding='utf-8') as file:
     config_data = yaml.safe_load(file)
 
 # 读取warp配置文件内容
-with codecs.open('/templates/clash_warp_template.yaml', 'r', encoding='utf-8') as file:
+with codecs.open('./templates/clash_warp_template.yaml', 'r', encoding='utf-8') as file:
     config_warp_data = yaml.safe_load(file)
 
 # 添加合并后的代理到proxies部分
@@ -204,8 +204,8 @@ for group in config_warp_data['proxy-groups']:
         group['proxies'].extend(proxy['name'] for proxy in merged_proxies)
 
 # 将更新后的数据写入到一个YAML文件中，并指定编码格式为UTF-8
-with codecs.open('/sub/merged_proxies.yaml', 'w', encoding='utf-8') as file:
+with codecs.open('./sub/merged_proxies.yaml', 'w', encoding='utf-8') as file:
     yaml.dump(config_data, file, sort_keys=False, allow_unicode=True)
-with codecs.open('/sub/merged_warp_proxies.yaml', 'w', encoding='utf-8') as file:
+with codecs.open('./sub/merged_warp_proxies.yaml', 'w', encoding='utf-8') as file:
     yaml.dump(config_warp_data, file, sort_keys=False, allow_unicode=True)
-print("完成聚合")
+print("聚合成狗")
