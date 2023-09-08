@@ -7,14 +7,25 @@
 第三，我为什么要提取节点出来，不仅仅是因为方便管理，可以在一个配置文件中切换不同的节点。而且是因为我并不喜欢使用他们所提供的客户端，虽然chromego所提供的客户端并没有什么问题，但是我还是喜欢自己常用的客户端。
 ## 不要用我配置文件中的warp
 因为这是我自己的
-## clash-meta订阅链接
+## clash-meta订阅链接(小火箭兼容，注意shadowtls可能无法使用需要手动添加host）
+### 原始版本
 ```
 https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/merged_warp_proxies.yaml
 ```
-套上warp版本
+### 套上warp版本
 ```
 https://raw.githubusercontent.com/vveg26/chromego_merge/main/sub/merged_proxies.yaml
 ```
+## 加速的订阅链接
+### 原始版本
+```
+https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/merged_proxies.yaml
+```
+### 套上warp版本
+```
+https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/merged_warp_proxies.yaml
+```
+
 ## Chromego聚合说明
 | ChromeGo文件夹 | 协议 | 结果 | 备注 |
 |--------|--------|--------|--------|
