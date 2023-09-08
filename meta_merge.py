@@ -65,6 +65,7 @@ for index, url in enumerate(urls):
     merged_proxies.append(proxy)
 
 # 歇斯底里节点处理
+
 with open("./urls/hysteria_urls.txt", "r") as file:
     urls = file.read().splitlines()
 
@@ -107,6 +108,7 @@ for index, url in enumerate(urls):
     merged_proxies.append(proxy)
 
 # reality节点处理
+print("提取reality")
 with open("./urls/reality_urls.txt", "r") as file:
     urls = file.read().splitlines()
 
