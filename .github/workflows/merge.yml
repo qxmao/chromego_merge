@@ -1,9 +1,9 @@
 name: Merge Script
 
 on:
-  #push:
-    #branches:
-      #- main  # 替换为你的默认分支
+  push:
+    branches:
+      - main  # 替换为你的默认分支
   schedule:
     - cron:  '0 0 * * 0'  # 每周日午夜触发
 
