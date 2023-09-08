@@ -1,0 +1,1 @@
+https://gitlab.com/free9999/ipupdate/-/raw/master/naiveproxy/config.json

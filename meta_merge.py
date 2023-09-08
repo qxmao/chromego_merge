@@ -133,29 +133,33 @@ try:
             json_data = json.loads(data)
 
             # 提取所需字段
-            type = json_data["outbounds"][0]["protocol"]
+            protocol = json_data["outbounds"][0]["protocol"]
             server = json_data["outbounds"][0]["settings"]["vnext"][0]["address"]
             port = json_data["outbounds"][0]["settings"]["vnext"][0]["port"]
             uuid = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["id"]
+            istls = True
             flow = json_data["outbounds"][0]["settings"]["vnext"][0]["users"][0]["flow"]
+            # 传输方式
             network = json_data["outbounds"][0]["streamSettings"]["network"]
             publicKey = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["publicKey"]
             shortId = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["shortId"]
             serverName = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["serverName"]
             fingerprint = json_data["outbounds"][0]["streamSettings"]["realitySettings"]["fingerprint"]
+            # udp转发
+            isudp = True
             name = f"reality{index}"
             
             # 根据network判断tcp
             if network == "tcp":
                 proxy = {
                     "name": name,
-                    "type": type,
+                    "type": protocol,
                     "server": server,
                     "port": port,
                     "uuid": uuid,
                     "network": network,
-                    "tls": True,
-                    "udp": True,
+                    "tls": istls,
+                    "udp": isudp,
                     "flow": flow,
                     "client-fingerprint": fingerprint,
                     "servername": serverName,                
@@ -171,13 +175,13 @@ try:
                 # 创建当前网址的proxy字典
                 proxy = {
                     "name": name,
-                    "type": type,
+                    "type": protocol,
                     "server": server,
                     "port": port,
                     "uuid": uuid,
                     "network": network,
-                    "tls": True,
-                    "udp": True,
+                    "tls": istls,
+                    "udp": isudp,
                     "flow": flow,
                     "client-fingerprint": fingerprint,
                     "servername": serverName,
@@ -189,7 +193,8 @@ try:
                         "short-id": shortId}
                 }
             else:
-                print(f"Unknown network type for URL {url}")
+                print(f"其他协议还未支持 URL {url}")
+                proxy={}
                 continue
             
             # 将当前proxy字典添加到所有proxies列表中

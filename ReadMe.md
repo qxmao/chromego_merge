@@ -45,7 +45,12 @@ https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/merged_warp_proxie
 | xray   | reality grpc tcp   | 已聚合   |     | 
 | sing-box   | shadowtls  v1  | 已聚合   | clash-meta对v1的支持有问题导致并无法在clashmeta中使用，可以手动拿出节点放入小火箭使用，并且我不知道chromego为什么搞个v1版本，明明v2 v3早就出了    | 
 | clashB v2go v2rayB   | 各种ss vmess   | 未聚合   |  又臭又长很多节点都已经失效   | 
-| naiveproxy   | naiveproxy   | 未聚合   |  需要用它自己的客户端   | 
+| naiveproxy   | naiveproxy   | 已聚合   |  需要用shadowrocket   | 
 | psiphon   | 未知   | 未聚合   |  不知道是什么东西   | 
 ## 致谢
 [chromego](https://github.com/bannedbook/fanqiang/tree/master/ChromeGo)
+## shadowrocket支持
+不想写了，写了一半，有点累
+TODO：
+- clashyaml文件转shadowrocket
+- xray reality转shadowrocket
