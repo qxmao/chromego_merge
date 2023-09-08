@@ -188,3 +188,16 @@ try:
             file.write(proxy + "\n")
 except Exception as e:
     print(f"Error writing to file: {e}")
+
+
+try:
+    with open("./sub/shadowrocket.txt", "r") as file:
+        content = file.read()
+        encoded_content = base64.b64encode(content.encode("utf-8")).decode("utf-8")
+    
+    with open("./sub/shadowrocket_base64.txt", "w") as encoded_file:
+        encoded_file.write(encoded_content)
+        
+    print("Content successfully encoded and written to file.")
+except Exception as e:
+    print(f"Error encoding file content: {e}")
