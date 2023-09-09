@@ -18,6 +18,7 @@ try:
             data = response.read().decode("utf-8")
             json_data = json.loads(data)
             proxy_str = json_data["proxy"]
+            proxy_str = proxy_str.replace("https://", "")
             # 对 proxy 进行 Base64 编码
             encoded_proxy = base64.b64encode(proxy_str.encode()).decode()
             # 添加前缀
