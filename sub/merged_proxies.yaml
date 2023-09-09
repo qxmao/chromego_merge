@@ -21,44 +21,46 @@ proxies:
   sni: gw.alicdn.com
   skip-cert-verify: true
 - name: 洛杉矶1
-  type: vless
-  server: 167.160.90.252
-  port: 11483
-  udp: true
-  uuid: 56fdb92d-bcdb-42c0-977c-db62006867a3
-  tls: true
-  servername: swdist.apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: TKCydrD0Hz70hQAPI7iMXRqfZbvniPrEcCVi0BswhEU
-  client-fingerprint: chrome
+  type: hysteria
+  server: 108.181.22.138
+  port: 18953
+  47000-48000: null
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  auth_str: fldekhmcKd8hrHyIjPpnqLfGf6xAciNUm3KpPkux5yyg94uxZy
+  up: 11
+  down: 55
+  hop_interval: 10
 - name: 洛杉矶2
-  type: vless
-  server: 45.136.245.126
-  port: 443
-  udp: true
-  uuid: 85ff3407-fe83-4c32-9ed0-787ecc720db5
-  tls: true
-  servername: updates.cdn-apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: iyuVZulQDU-2txgZNn_iSv9qizc9UCw8FZqeL9pm7GA
-  client-fingerprint: chrome
+  type: hysteria
+  server: 108.181.22.130
+  port: 44056
+  47000-48000: null
+  sni: qq.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+  protocol: udp
+  auth_str: mWpUGqLT60IOf9A4Aqi59yqUvacoAoE1yAtPBg71E6ze4KnBau
+  up: 11
+  down: 55
+  hop_interval: 10
 - name: 洛杉矶3
-  type: vless
-  server: 185.22.153.195
-  port: 443
+  type: tuic
+  server: x1.cfcdn3.xyz
+  port: 52389
   udp: true
-  uuid: 2c7e86af-9fa9-456c-a1a2-22fefa6cb2ca
-  tls: true
-  servername: osxapps.itunes.apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: jLzBerhjXZGmQRCEWFFuc8CCo6c4Zv03iWc0OxWMl0M
-  client-fingerprint: chrome
+  uuid: d9bc1fa7-30fa-4a25-b8a4-e0fab2ddcf15
+  password: d9bc1fa7-30fa-4a25-b8a4-e0fab2ddcf15
+  alpn:
+  - h3
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
 - name: 洛杉矶4
   type: vless
   server: 45.145.72.227
@@ -86,18 +88,18 @@ proxies:
     public-key: iyuVZulQDU-2txgZNn_iSv9qizc9UCw8FZqeL9pm7GA
   client-fingerprint: chrome
 - name: 洛杉矶6
-  type: vless
-  server: 185.22.153.195
-  port: 443
+  type: tuic
+  server: x3.freek1.xyz
+  port: 54582
   udp: true
-  uuid: 2c7e86af-9fa9-456c-a1a2-22fefa6cb2ca
-  tls: true
-  servername: osxapps.itunes.apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: jLzBerhjXZGmQRCEWFFuc8CCo6c4Zv03iWc0OxWMl0M
-  client-fingerprint: chrome
+  uuid: 088a6c3b-a555-4117-bfa1-2efd7ef0180e
+  password: 088a6c3b-a555-4117-bfa1-2efd7ef0180e
+  alpn:
+  - h3
+  disable-sni: true
+  reduce-rtt: true
+  udp-relay-mode: native
+  congestion-controller: bbr
 - name: hysteria0
   type: hysteria
   server: 167.160.91.115
@@ -139,19 +141,17 @@ proxies:
   - h3
 - name: reality0
   type: vless
-  server: 108.181.22.155
-  port: 443
-  uuid: cb26c708-2cbb-4cad-b66d-d7e39808dfad
-  network: grpc
+  server: 173.234.25.51
+  port: 29295
+  uuid: 9e2626df-3467-4393-9f7c-aaca6fe4336c
+  network: tcp
   tls: true
   udp: true
-  flow: ''
+  flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: addons.mozilla.org
-  grpc-opts:
-    grpc-service-name: grpc
+  servername: m.media-amazon.com
   reality-opts:
-    public-key: ipkaULYBqXoRYrNMFDayyc_kFta1POlXisjhHbzZxy4
+    public-key: LN86WNkTPKjU0rSHPg1X7TGZy1ba9vGwnt_MukdZOB8
     short-id: ''
 - name: reality1
   type: vless
