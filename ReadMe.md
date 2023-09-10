@@ -41,6 +41,8 @@ https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/merged_proxies.yam
 ```
 https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/shadowrocket_base64.txt
 ```
+## 致谢
+[chromego]([https://github.com/bannedbook/fanqiang/tree/master/ChromeGo](https://github.com/bannedbook/fanqiang/releases/tag/ChromeGo-latest)https://github.com/bannedbook/fanqiang/releases/tag/ChromeGo-latest)
 
 ## Chromego聚合说明
 | ChromeGo文件夹 | 协议 | 结果 | 备注 |
@@ -52,7 +54,6 @@ https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/shadowrocket_base6
 | naiveproxy   | naiveproxy   | 已聚合（小火箭）   |  需要用shadowrocket   | 
 | psiphon   | 未知   | 未聚合   |  不知道是什么东西   | 
 | clashB v2go v2rayB   | 各种ss vmess   | 未聚合   |  又臭又长很多节点都已经失效   | 
-## 致谢
-[chromego](https://github.com/bannedbook/fanqiang/tree/master/ChromeGo)
+
 ## shadowrocket支持
 
