@@ -42,7 +42,7 @@ https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/merged_proxies.yam
 https://fastly.jsdelivr.net/gh/vveg26/chromego_merge@main/sub/shadowrocket_base64.txt
 ```
 ## 致谢
-[chromego]([https://github.com/bannedbook/fanqiang/tree/master/ChromeGo](https://github.com/bannedbook/fanqiang/releases/tag/ChromeGo-latest)https://github.com/bannedbook/fanqiang/releases/tag/ChromeGo-latest)
+[ChromeGo](https://github.com/bannedbook/fanqiang/releases/tag/ChromeGo-latest)
 
 ## Chromego聚合说明
 | ChromeGo文件夹 | 协议 | 结果 | 备注 |
