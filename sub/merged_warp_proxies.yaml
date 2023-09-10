@@ -79,19 +79,6 @@ proxies:
   reduce-rtt: true
   udp-relay-mode: native
   congestion-controller: bbr
-- name: 洛杉矶4
-  type: vless
-  server: 45.145.72.227
-  port: 16011
-  udp: true
-  uuid: c891d2dd-352d-4e38-aec5-0cb454c12715
-  tls: true
-  servername: one-piece.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: xR3BwG1BWGWuRlHf8n3M1HPQeEV0FxATWuURzfCLkyE
-  client-fingerprint: chrome
 - name: 洛杉矶5
   type: vless
   server: 45.136.245.126
@@ -104,6 +91,19 @@ proxies:
   network: tcp
   reality-opts:
     public-key: iyuVZulQDU-2txgZNn_iSv9qizc9UCw8FZqeL9pm7GA
+  client-fingerprint: chrome
+- name: 洛杉矶4
+  type: vless
+  server: 45.145.72.227
+  port: 16011
+  udp: true
+  uuid: c891d2dd-352d-4e38-aec5-0cb454c12715
+  tls: true
+  servername: one-piece.com
+  flow: xtls-rprx-vision
+  network: tcp
+  reality-opts:
+    public-key: xR3BwG1BWGWuRlHf8n3M1HPQeEV0FxATWuURzfCLkyE
   client-fingerprint: chrome
 - name: 洛杉矶6
   type: tuic
@@ -133,19 +133,6 @@ proxies:
   - h3
 - name: hysteria1
   type: hysteria
-  server: 51.158.54.46
-  port: '49139'
-  auth_str: dongtaiwang.com
-  up: 11
-  down: 55
-  fast-open: true
-  protocol: udp
-  sni: www.paypal.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-- name: hysteria2
-  type: hysteria
   server: 173.234.25.52
   port: '20164'
   auth_str: Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F
@@ -154,6 +141,32 @@ proxies:
   fast-open: true
   protocol: udp
   sni: www.microsoft.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: hysteria2
+  type: hysteria
+  server: 166.1.18.191
+  port: 16542,21000-22000
+  auth_str: PidedzMQ9WgikepaWKUdAaC2hLDFqxK5z1Aw19dxAluufRwpll
+  up: 11
+  down: 55
+  fast-open: true
+  protocol: udp
+  sni: www.microsoft.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: hysteria3
+  type: hysteria
+  server: 51.158.54.46
+  port: '49139'
+  auth_str: dongtaiwang.com
+  up: 11
+  down: 55
+  fast-open: true
+  protocol: udp
+  sni: www.paypal.com
   skip-cert-verify: true
   alpn:
   - h3
@@ -187,17 +200,17 @@ proxies:
     short-id: ''
 - name: reality2
   type: vless
-  server: 166.1.18.191
+  server: 185.22.153.195
   port: 443
-  uuid: f7e892a9-2bf2-47eb-ad67-e2060f1051e6
+  uuid: 2c7e86af-9fa9-456c-a1a2-22fefa6cb2ca
   network: tcp
   tls: true
   udp: true
   flow: xtls-rprx-vision
   client-fingerprint: chrome
-  servername: d1.awsstatic.com
+  servername: osxapps.itunes.apple.com
   reality-opts:
-    public-key: NciWtYa1soF85NiUzFpudo2jx3tWL8j-Q4itC6_kBjI
+    public-key: jLzBerhjXZGmQRCEWFFuc8CCo6c4Zv03iWc0OxWMl0M
     short-id: ''
 - name: reality3
   type: vless
@@ -239,12 +252,13 @@ proxy-groups:
   - 洛杉矶1
   - 洛杉矶2
   - 洛杉矶3
-  - 洛杉矶4
   - 洛杉矶5
+  - 洛杉矶4
   - 洛杉矶6
   - hysteria0
   - hysteria1
   - hysteria2
+  - hysteria3
   - reality0
   - reality1
   - reality2
@@ -256,12 +270,13 @@ proxy-groups:
   - 洛杉矶1
   - 洛杉矶2
   - 洛杉矶3
-  - 洛杉矶4
   - 洛杉矶5
+  - 洛杉矶4
   - 洛杉矶6
   - hysteria0
   - hysteria1
   - hysteria2
+  - hysteria3
   - reality0
   - reality1
   - reality2
@@ -273,12 +288,13 @@ proxy-groups:
   - 洛杉矶1
   - 洛杉矶2
   - 洛杉矶3
-  - 洛杉矶4
   - 洛杉矶5
+  - 洛杉矶4
   - 洛杉矶6
   - hysteria0
   - hysteria1
   - hysteria2
+  - hysteria3
   - reality0
   - reality1
   - reality2
