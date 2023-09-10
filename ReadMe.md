@@ -13,8 +13,7 @@ chromego如果更新我会及时修改代码保证代码可用，如果更新不
 
 第三，我为什么要提取节点出来，不仅仅是因为方便管理，可以在一个配置文件中切换不同的节点。而且是因为我并不喜欢使用他们所提供的客户端，虽然chromego所提供的客户端并没有什么问题，但是我还是喜欢自己常用的客户端。
 
-## 不要用我配置文件中的warp
-因为这是我自己的
+## 如何修改为自己的warp节点
 可以用warp+机器人和提取wg节点替换掉配置文件中的wg信息
 [warp提取wireguard网站](https://replit.com/@misaka-blog/wgcf-profile-generator)
 [warp+机器人](https://t.me/generatewarpplusbot)
