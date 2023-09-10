@@ -21,6 +21,7 @@ try:
 
             # 提取proxies部分并合并到merged_proxies中
             proxies = content.get('proxies', [])
+
             merged_proxies.extend(proxies)
         except Exception as e:
             print(f"Error processing URL {url}: {e}")
@@ -86,10 +87,18 @@ try:
 
             # 提取所需字段
             auth = json_data["auth_str"]
-            string = json_data["server"]
-            result = string.split(":")
-            server = result[0]
-            server_port = result[1]
+            server_ports = json_data["server"]
+            server_ports_slt = server_ports.split(":")
+            server = server_ports_slt[0]
+            ports = server_ports_slt[1]
+            ports_slt = ports.split(",")
+            server_port = int(ports_slt[0])
+            if len(ports_slt) > 1:
+                mport = ports_slt[1]
+            else:
+                mport = server_port
+            
+
             server_name = json_data["server_name"]
             alpn = json_data["alpn"]
             protocol = json_data["protocol"]
@@ -101,6 +110,7 @@ try:
                 "type": "hysteria",
                 "server": server,
                 "port": server_port,
+                "ports": mport,
                 "auth_str": auth,
                 "up": 11,
                 "down": 55,

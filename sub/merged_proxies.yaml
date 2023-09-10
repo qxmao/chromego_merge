@@ -103,7 +103,8 @@ proxies:
 - name: hysteria0
   type: hysteria
   server: 167.160.91.115
-  port: '13928'
+  port: 13928
+  ports: 13928
   auth_str: BF0LL4L2jlqSdW3KxjQv81AiFFjj90vWRHeUoqUuTVPeDAGvq3
   up: 11
   down: 55
@@ -116,7 +117,8 @@ proxies:
 - name: hysteria1
   type: hysteria
   server: 173.234.25.52
-  port: '20164'
+  port: 20164
+  ports: 20164
   auth_str: Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F
   up: 11
   down: 55
@@ -129,7 +131,8 @@ proxies:
 - name: hysteria2
   type: hysteria
   server: 166.1.18.191
-  port: 16542,21000-22000
+  port: 16542
+  ports: 21000-22000
   auth_str: PidedzMQ9WgikepaWKUdAaC2hLDFqxK5z1Aw19dxAluufRwpll
   up: 11
   down: 55
@@ -142,7 +145,8 @@ proxies:
 - name: hysteria3
   type: hysteria
   server: 51.158.54.46
-  port: '49139'
+  port: 49139
+  ports: 49139
   auth_str: dongtaiwang.com
   up: 11
   down: 55
