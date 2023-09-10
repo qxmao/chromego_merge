@@ -1,1 +1,2 @@
-https://gitlab.com/free9999/ipupdate/-/raw/master/naiveproxy/config.json
+https://raw.githubusercontent.com/Alvin9999/PAC/master/naiveproxy/1/config.json
+https://raw.githubusercontent.com/Alvin9999/PAC/master/naiveproxy/config.json

@@ -1,6 +1,6 @@
-https://gitlab.com/free9999/ipupdate/-/raw/master/clash.meta/config.yaml
-https://fastly.jsdelivr.net/gh/Alvin9999/pac2@latest/clash.meta/config.yaml
-https://gitlab.com/free9999/ipupdate/-/raw/master/clash.meta/2/config.yaml
-https://fastly.jsdelivr.net/gh/Alvin9999/pac2@latest/clash.meta/2/config.yaml
-https://gitlab.com/free9999/ipupdate/-/raw/master/clash.meta/3/config.yaml
-https://fastly.jsdelivr.net/gh/Alvin9999/pac2@latest/clash.meta/3/config.yaml
+https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta/1/config.yaml
+https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta/config.yaml
+https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta/13/config.yaml
+https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta/15/config.yaml
+https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta/2/config.yaml
+https://raw.githubusercontent.com/Alvin9999/pac2/master/clash.meta/3/config.yaml

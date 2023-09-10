@@ -163,20 +163,52 @@ try:
 
             # 提取proxies部分并合并到merged_proxies中
             proxies = content.get('proxies', [])
-
+            
             for proxy in proxies:
-                server = proxy['server']
-                port  = proxy['port']
-                udp = proxy['udp']
-                uuid = proxy['uuid']
-                tls = proxy['tls']
-                serverName = proxy['servername']
-                flow = proxy['flow']
-                network = proxy['network']
-                publicKey = proxy['reality-opts']['public-key']
-                fp = proxy['client-fingerprint']
-                reality_meta =  f"vless://{uuid}@{server}:{port}?security=reality&flow={flow}&type={network}&fp={fingerprint}&pbk={publicKey}&sni={serverName}#reality_meta{index}"
-                merged_proxies.append(reality_meta)
+                # 如果类型是reality
+                if proxy['type'] == 'vless' :
+                    server = proxy['server']
+                    port  = proxy['port']
+                    udp = proxy['udp']
+                    uuid = proxy['uuid']
+                    tls = proxy['tls']
+                    serverName = proxy['servername']
+                    flow = proxy['flow']
+                    network = proxy['network']
+                    publicKey = proxy['reality-opts']['public-key']
+                    fp = proxy['client-fingerprint']
+                    reality_meta =  f"vless://{uuid}@{server}:{port}?security=reality&flow={flow}&type={network}&fp={fingerprint}&pbk={publicKey}&sni={serverName}#reality_meta{index}"
+                    merged_proxies.append(reality_meta)
+                elif proxy['type'] == 'tuic':
+                    server = proxy["server"]
+                    port = proxy["port"]
+                    udp = proxy["udp"]
+                    uuid = proxy['uuid']
+                    password = proxy['password']
+                    alpn = proxy["alpn"][0]
+                    #disable_sni = proxy["disable-sni"]
+                    udp_relay_mode = proxy['udp-relay-mode']
+                    congestion =   proxy['congestion-controller']
+                    tuic_meta = f"tuic://{server}:{port}?uuid={uuid}&version=5&password={password}&insecure=1&alpn={alpn}&mode={udp_relay_mode}"
+                    merged_proxies.append(tuic_meta)
+                elif proxy['type'] == 'hysteria':
+                    server = proxy["server"]           
+                    mport = str(proxy["port"])
+                    ports = mport.split(",")
+                    port = int(ports[0])
+                    protocol = proxy["protocol"]
+                    up_mbps = proxy["up"]
+                    down_mbps = proxy["down"]
+                    alpn = proxy["alpn"][0]
+                    # insecure = proxy["skip-cert-verify"]
+                    obfs = ""
+                    insecure = 1
+                    server_name = proxy["sni"]
+                    fast_open = 1
+                    auth = proxy["auth_str"]
+                    # 生成URL
+                    hysteria_meta = f"hysteria://{server}:{port}?peer={server_name}&auth={auth}&insecure={insecure}&upmbps={up_mbps}&downmbps={down_mbps}&alpn={alpn}&mport={mport}&obfs={obfs}&protocol={protocol}&fastopen={fast_open}#hysteria{index}"
+                    merged_proxies.append(hysteria_meta)
         except Exception as e:
             print(f"Error processing URL {url}: {e}")
 except Exception as e:
