@@ -20,198 +20,172 @@ proxies:
   udp: true
   sni: gw.alicdn.com
   skip-cert-verify: true
-- name: 洛杉矶1
+- name: ip
   type: hysteria
-  server: 108.181.22.138
-  port: 18953
-  47000-48000: null
-  sni: bing.com
-  skip-cert-verify: true
+  server: hy2.dtku47.xyz
+  port: 15566
+  auth-str: jQrGpwSqp34P
   alpn:
   - h3
   protocol: udp
-  auth_str: fldekhmcKd8hrHyIjPpnqLfGf6xAciNUm3KpPkux5yyg94uxZy
-  up: 11
-  down: 55
-  hop_interval: 10
-- name: 洛杉矶2
+  up: 50 Mbps
+  down: 100 Mbps
+- name: ip
   type: hysteria
-  server: 108.181.22.130
-  port: 44056
-  47000-48000: null
-  sni: qq.com
-  skip-cert-verify: true
+  server: clash1.dtku47.xyz
+  port: 11223
+  auth-str: O5tQQiW2xKf5
   alpn:
   - h3
   protocol: udp
-  auth_str: mWpUGqLT60IOf9A4Aqi59yqUvacoAoE1yAtPBg71E6ze4KnBau
-  up: 11
-  down: 55
-  hop_interval: 10
-- name: 洛杉矶3
-  type: tuic
-  server: x1.cfcdn3.xyz
-  port: 52389
-  udp: true
-  uuid: d9bc1fa7-30fa-4a25-b8a4-e0fab2ddcf15
-  password: d9bc1fa7-30fa-4a25-b8a4-e0fab2ddcf15
+  up: 50 Mbps
+  down: 100 Mbps
+- name: ip
+  type: hysteria
+  server: hy2.dtku47.xyz
+  port: 15566
+  auth-str: jQrGpwSqp34P
   alpn:
   - h3
-  disable-sni: true
-  reduce-rtt: true
-  udp-relay-mode: native
-  congestion-controller: bbr
-- name: 洛杉矶5
-  type: vless
-  server: 45.136.245.126
-  port: 443
-  udp: true
-  uuid: 85ff3407-fe83-4c32-9ed0-787ecc720db5
-  tls: true
-  servername: updates.cdn-apple.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: iyuVZulQDU-2txgZNn_iSv9qizc9UCw8FZqeL9pm7GA
-  client-fingerprint: chrome
-- name: 洛杉矶4
-  type: vless
-  server: 45.145.72.227
-  port: 16011
-  udp: true
-  uuid: c891d2dd-352d-4e38-aec5-0cb454c12715
-  tls: true
-  servername: one-piece.com
-  flow: xtls-rprx-vision
-  network: tcp
-  reality-opts:
-    public-key: xR3BwG1BWGWuRlHf8n3M1HPQeEV0FxATWuURzfCLkyE
-  client-fingerprint: chrome
-- name: 洛杉矶6
-  type: tuic
-  server: x3.freek1.xyz
-  port: 54582
-  udp: true
-  uuid: 088a6c3b-a555-4117-bfa1-2efd7ef0180e
-  password: 088a6c3b-a555-4117-bfa1-2efd7ef0180e
+  protocol: udp
+  up: 50 Mbps
+  down: 100 Mbps
+- name: dongtaiwang.com_0
+  type: vmess
+  server: 104.26.9.22
+  port: 8080
+  cipher: auto
+  uuid: ef8c954e-014f-4b36-8273-9b5086afab34
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  servername: dual-nothing-prep-exit.trycloudflare.com
+  network: ws
+  ws-opts:
+    path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
+    headers:
+      host: dual-nothing-prep-exit.trycloudflare.com
+- name: dongtaiwang.com_1
+  type: vmess
+  server: 172.64.97.235
+  port: 8080
+  cipher: auto
+  uuid: ef8c954e-014f-4b36-8273-9b5086afab34
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  servername: dual-nothing-prep-exit.trycloudflare.com
+  network: ws
+  ws-opts:
+    path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
+    headers:
+      host: dual-nothing-prep-exit.trycloudflare.com
+- name: dongtaiwang.com_2
+  type: vmess
+  server: 104.19.38.28
+  port: 8080
+  cipher: auto
+  uuid: ef8c954e-014f-4b36-8273-9b5086afab34
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  servername: dual-nothing-prep-exit.trycloudflare.com
+  network: ws
+  ws-opts:
+    path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
+    headers:
+      host: dual-nothing-prep-exit.trycloudflare.com
+- name: dongtaiwang.com_3
+  type: vmess
+  server: 104.19.38.48
+  port: 8080
+  cipher: auto
+  uuid: ef8c954e-014f-4b36-8273-9b5086afab34
+  alterId: 0
+  tls: false
+  skip-cert-verify: true
+  servername: dual-nothing-prep-exit.trycloudflare.com
+  network: ws
+  ws-opts:
+    path: ef8c954e-014f-4b36-8273-9b5086afab34-vm
+    headers:
+      host: dual-nothing-prep-exit.trycloudflare.com
+- name: ip
+  type: hysteria
+  server: hy2.dtku47.xyz
+  port: 15566
+  auth-str: jQrGpwSqp34P
   alpn:
   - h3
-  disable-sni: true
-  reduce-rtt: true
-  udp-relay-mode: native
-  congestion-controller: bbr
+  protocol: udp
+  up: 50 Mbps
+  down: 100 Mbps
+- name: ip
+  type: hysteria
+  server: hy1.dtku47.xyz
+  port: 22334
+  auth-str: lASdKzWK0VxL
+  alpn:
+  - h3
+  protocol: udp
+  up: 50 Mbps
+  down: 100 Mbps
 - name: hysteria0
   type: hysteria
-  server: 167.160.91.115
-  port: 13928
-  ports: 13928
-  auth_str: BF0LL4L2jlqSdW3KxjQv81AiFFjj90vWRHeUoqUuTVPeDAGvq3
-  up: 11
-  down: 55
-  fast-open: true
-  protocol: udp
-  sni: paypal.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-- name: hysteria1
-  type: hysteria
-  server: 173.234.25.52
-  port: 20164
-  ports: 20164
-  auth_str: Ljg6NNEATDqP97hdAdHe1lJv7ggtKc0h7zmCCZKCX3qY0LR64F
-  up: 11
-  down: 55
-  fast-open: true
-  protocol: udp
-  sni: www.microsoft.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-- name: hysteria2
-  type: hysteria
-  server: 166.1.18.191
-  port: 16542
-  ports: 21000-22000
-  auth_str: PidedzMQ9WgikepaWKUdAaC2hLDFqxK5z1Aw19dxAluufRwpll
-  up: 11
-  down: 55
-  fast-open: true
-  protocol: udp
-  sni: www.microsoft.com
-  skip-cert-verify: true
-  alpn:
-  - h3
-- name: hysteria3
-  type: hysteria
-  server: 51.158.54.46
-  port: 49139
-  ports: 49139
+  server: 108.181.5.133
+  port: 26022
+  ports: 26022
   auth_str: dongtaiwang.com
   up: 11
   down: 55
   fast-open: true
   protocol: udp
-  sni: www.paypal.com
+  sni: bing.com
   skip-cert-verify: true
   alpn:
   - h3
-- name: reality0
-  type: vless
-  server: 173.234.25.51
-  port: 29295
-  uuid: 9e2626df-3467-4393-9f7c-aaca6fe4336c
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: m.media-amazon.com
-  reality-opts:
-    public-key: LN86WNkTPKjU0rSHPg1X7TGZy1ba9vGwnt_MukdZOB8
-    short-id: ''
-- name: reality1
-  type: vless
-  server: 45.140.168.221
-  port: 443
-  uuid: 40ccefc6-35da-4e64-8a60-7c98671debb7
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: d1.awsstatic.com
-  reality-opts:
-    public-key: 9UVYudHsbabswlvOuDRMweSC31_qhToDx4_QDIf-oGk
-    short-id: ''
-- name: reality2
-  type: vless
-  server: 185.22.153.195
-  port: 443
-  uuid: 2c7e86af-9fa9-456c-a1a2-22fefa6cb2ca
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: osxapps.itunes.apple.com
-  reality-opts:
-    public-key: jLzBerhjXZGmQRCEWFFuc8CCo6c4Zv03iWc0OxWMl0M
-    short-id: ''
-- name: reality3
-  type: vless
-  server: 45.140.168.221
-  port: 443
-  uuid: 40ccefc6-35da-4e64-8a60-7c98671debb7
-  network: tcp
-  tls: true
-  udp: true
-  flow: xtls-rprx-vision
-  client-fingerprint: chrome
-  servername: d1.awsstatic.com
-  reality-opts:
-    public-key: 9UVYudHsbabswlvOuDRMweSC31_qhToDx4_QDIf-oGk
-    short-id: ''
+- name: hysteria1
+  type: hysteria
+  server: 62.210.243.131
+  port: 18702
+  ports: 18702
+  auth_str: dongtaiwang.com
+  up: 11
+  down: 55
+  fast-open: true
+  protocol: udp
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: hysteria2
+  type: hysteria
+  server: 62.210.243.131
+  port: 18702
+  ports: 18702
+  auth_str: dongtaiwang.com
+  up: 11
+  down: 55
+  fast-open: true
+  protocol: udp
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: hysteria3
+  type: hysteria
+  server: 109.104.152.194
+  port: 58510
+  ports: 58510
+  auth_str: dongtaiwang.com
+  up: 11
+  down: 55
+  fast-open: true
+  protocol: udp
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
 proxy-groups:
 - name: 节点选择
   type: select
@@ -219,20 +193,19 @@ proxy-groups:
   - 自动选择
   - DIRECT
   - 油管-绵阿羊
-  - 洛杉矶1
-  - 洛杉矶2
-  - 洛杉矶3
-  - 洛杉矶5
-  - 洛杉矶4
-  - 洛杉矶6
+  - ip
+  - ip
+  - ip
+  - dongtaiwang.com_0
+  - dongtaiwang.com_1
+  - dongtaiwang.com_2
+  - dongtaiwang.com_3
+  - ip
+  - ip
   - hysteria0
   - hysteria1
   - hysteria2
   - hysteria3
-  - reality0
-  - reality1
-  - reality2
-  - reality3
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -240,20 +213,19 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 油管-绵阿羊
-  - 洛杉矶1
-  - 洛杉矶2
-  - 洛杉矶3
-  - 洛杉矶5
-  - 洛杉矶4
-  - 洛杉矶6
+  - ip
+  - ip
+  - ip
+  - dongtaiwang.com_0
+  - dongtaiwang.com_1
+  - dongtaiwang.com_2
+  - dongtaiwang.com_3
+  - ip
+  - ip
   - hysteria0
   - hysteria1
   - hysteria2
   - hysteria3
-  - reality0
-  - reality1
-  - reality2
-  - reality3
 rule-providers:
   reject:
     type: http
